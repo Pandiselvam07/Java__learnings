@@ -10,13 +10,7 @@ class StringLenghtComparator implements Comparator<String>{
         int len1 = o1.length();
         int len2 = o2.length();
 
-        if (len1 > len2) {
-            return 1;
-        }
-        if (len1 < len2) {
-            return -1;
-        }
-        return 0;
+        return Integer.compare(len1, len2);
     }
 }
 
@@ -28,7 +22,7 @@ public class SortingLists {
         arraylist.add("Hola");
         arraylist.add("Ciao");
 
-        Collections.sort(arraylist,new StringLenghtComparator());
+        arraylist.sort(new StringLenghtComparator());
         System.out.println(arraylist);
 
         for(String arr : arraylist) {
